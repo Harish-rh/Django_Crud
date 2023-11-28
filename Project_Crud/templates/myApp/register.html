@@ -1,0 +1,21 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}
+    <title>Register</title>
+{% endblock %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <div class="container-fluid" style="margin-top:50px;">
+        <div class="col-md-offset-4 col-md-4">
+            <h2 class="text-primary page-header text-center"><i class="fa fa-users"></i> Register Form</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Register" class="btn btn-primary btn-block">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
